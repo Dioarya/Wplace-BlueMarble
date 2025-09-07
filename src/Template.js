@@ -218,11 +218,12 @@ export default class Template {
           for (let x = 0; x < canvasWidth; x++) {
             // For every pixel...
             const pixelIndex = (y * canvasWidth + x) * 4; // Find the pixel index in an array where every 4 indexes are 1 pixel
-            // If the pixel is the color #deface, draw a translucent gray checkerboard pattern
+            // If the pixel is the color #deface or alpha 0, draw a translucent gray checkerboard pattern
             if (
-              imageData.data[pixelIndex] === 222 &&
+              (imageData.data[pixelIndex] === 222 &&
               imageData.data[pixelIndex + 1] === 250 &&
-              imageData.data[pixelIndex + 2] === 206
+              imageData.data[pixelIndex + 2] === 206) ||
+              imageData.data[pixelIndex + 3] === 0
             ) {
               if ((x + y) % 2 === 0) { // Formula for checkerboard pattern
                 imageData.data[pixelIndex] = 0;

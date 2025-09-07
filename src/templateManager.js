@@ -49,7 +49,7 @@ export default class TemplateManager {
     this.userID = null; // The ID of the current user
     this.encodingBase = '!#$%&\'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[]^_`abcdefghijklmnopqrstuvwxyz{|}~'; // Characters to use for encoding/decoding
     this.tileSize = 1000; // The number of pixels in a tile. Assumes the tile is square
-    this.drawMult = 3; // The enlarged size for each pixel. E.g. when "3", a 1x1 pixel becomes a 1x1 pixel inside a 3x3 area. MUST BE ODD
+    this.drawMult = 3; // The enlarged size for each pixel. E.g. when "3", a wplace pixel contains a 3x3 area of template canvas pixels. MUST BE ODD
     
     // Template
     this.canvasTemplate = null; // Our canvas
